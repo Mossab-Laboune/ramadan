@@ -1,0 +1,572 @@
+/*Start Global*/
+*{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    direction: rtl;
+    background-color: #c9c9c9;
+    font-family: serif;
+}
+.container{
+    width: 1200px;
+    margin: auto;
+}
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+/*End Global*/
+
+
+
+/*Start Top Button*/
+
+#button {
+    display: inline-block;
+    background-color: #037365;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    border-radius: 4px;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    transition: background-color .3s, 
+      opacity .5s, visibility .5s;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+  }
+  #button::after {
+    content: "\f077";
+    font-family: FontAwesome;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 2em;
+    line-height: 50px;
+    color: #fff;
+  }
+  #button:hover {
+    cursor: pointer;
+    background-color: #333;
+  }
+  #button:active {
+    background-color: #555;
+  }
+  #button.show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+/*End Top Button
+
+/*Start Navigation Bar*/
+
+.navbar{
+    font-size: 20px;
+    height: 0;
+    position: absolute;
+    z-index: 2;
+}
+.inner-header{
+
+    height: 200px;
+    width: 100%;
+}
+.navbar .logo{
+    float: right;
+    width: 40%;
+    margin-top: 5px;
+}
+.navbar .logo img{
+    width: 20%;
+    height: 20%;
+    padding: 5px 0px;
+    margin: 20px 50px;
+}
+.navbar .links{
+    float: right;
+    width: 60%;
+    margin-top: 60px;
+}
+.navbar .links li{
+    display: inline-block;
+    padding: 0px;
+    margin: 0px 20px;
+    border-bottom: 2px solid transparent;
+}
+.navbar .links li a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 25px;
+    font-family: 'Droid Kufi', serif;
+}
+
+.navbar .links li a:hover,
+.navbar .links .active a{
+    color: #037365;
+}
+/*End Navigation Bar*/
+
+/*Start Header*/
+.header{
+    background: url(../images/bgheader.jpg);
+    background-repeat : no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.header .overlay{
+    background-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    color: #fff;
+    z-index: 1;
+}
+.header .overlay h1{
+    color: #037365;
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 200px;
+}
+.header .overlay h1 span{
+    color: #fff;
+}
+.header .overlay p{
+    color: #AB87AD;
+    line-height: 2;
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 35px;
+    text-align: center;
+}
+/*End Header*/
+
+
+/* Start Meals*/
+
+.meals{
+    padding:35px 0;
+    font-size: 40px;
+    font-weight: bold;
+    color: #037365;
+    margin-top: 30px;
+}
+.meals h2{
+    font-size: 40px;
+    font-weight: bold;
+    color: #037365;
+    margin-top: 10px;
+}
+.meals h2 span{
+    color: #fff;
+}
+.meals p{
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    margin-top: 80px;
+    margin-bottom: -20px;
+    font-style: italic;
+    font-weight: bold;
+}
+.meals ul{
+    margin-top: 65px;
+}
+.meals ul li{
+    display: inline-block;
+    border: 1px solid #000;
+    padding: 15px;
+    margin-left: 20px;
+    color: #000;
+    border-radius: 5px;
+    font-size: 20px;
+}
+.meals ul li:hover,
+.meals ul li.selected{
+    background-color: #037365 ;
+    color: #fff;
+    border: 1px solid #037365;
+}
+.meals .food{
+    margin-top: 35px;
+    overflow: hidden;
+}
+.meals .food .row > div:nth-child(2){
+    margin-right: 2%;
+    margin-left: 2%;
+}
+.meals .food .row > div{
+    width: 32%;
+    display: block;
+    float: right;
+    margin-bottom: 30px;
+    position: relative;
+    cursor: pointer;
+    border-radius: 10px;
+    background-color: #fff;
+}
+.meals .food .row > div .over{
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    line-height: 232px;
+    font-size: 20px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    background-color: rgba(51, 175, 128, .9);
+    display: none;
+}
+.meals .food .row > div .over h4{
+    color: #fff;
+    text-align: center;
+    font-size: 18px;
+    margin-top: -60px;
+}
+.meals .food .row > div .over p{
+    color: rgba(219, 213, 208, 0.774);
+    line-height: 1.2;
+    margin-top: -70px;
+}
+.meals .food .row > div .heart{
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: #fff;
+    display: none;
+}
+.meals .food .row > div:hover .over,
+.meals .food .row > div:hover .heart{
+    display: block;
+}
+.meals .food .row > div img{
+    max-width: 100%;
+    height: auto;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+}
+.meals .food .row > div h4{
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    color: #037365;
+}
+.mix{
+    display: none;
+}
+.meals .shuffle li{
+    cursor: pointer;
+}
+/* End Meals*/
+
+
+
+
+/* Start Services*/
+.services{
+    padding:35px 0 150px;
+    font-size: 40px;
+    font-weight: bold;
+    color: #037365;
+    margin-top: 30px;
+}
+.services h2{
+    font-size: 40px;
+    font-weight: bold;
+    color: #037365;
+    margin-top: 10px;
+}
+.services .item{
+    margin-top: 40px;
+    margin-bottom: 30px;
+    text-align: right;
+    width :46%;
+    margin-right: 2%;
+    margin-left: 2%;
+    text-align: center;
+    border: 1px solid #037365;
+    border-radius: 10px;
+    background-color: #fff;
+    display: inline-block;
+}
+.services .item i{
+    color: #037365;
+    float: right;
+    text-align: right;
+    margin-top: 20px;
+}
+.services .item .info p{
+    color: rgba(114, 112, 112, 0.7);
+    font-size: 18px;
+    text-align: center;
+}
+/* End Services*/
+
+
+
+
+
+/* Star Order*/
+.order-section{
+    padding: 35px 0;
+    font-size: 40px;
+    font-weight: bold;
+    color: #037365;
+    margin-top: 30px;
+}
+.order-section h2{
+    text-align: right;
+    font-size: 40px;
+    font-weight: bold;
+    color: #037365;
+    margin-top: 15px;
+}
+.order-section h2 span{
+    color: #fff;
+}
+.form1{
+    border: 1px solid #000;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 200px 300px 200px rgba(0, 0, 0, 0.5);
+}
+.order-form{
+    max-width: 600px;
+    margin: 50px auto;
+}
+.order-form div{
+    margin: 20px;
+}
+
+.order-form label{
+    display: inline-block;
+    min-width: 100px;
+    font-weight: bold;
+    color: #232323;
+    font-size: 18px;
+    padding: 0;
+}
+
+.order-form input{
+    border: 3px solid #037365;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 5px 10px;
+}
+.order-form select{
+    border: 3px solid #037365;
+    border-radius: 20px;
+    font-size: 20px;
+    padding: 5px 10px;
+}
+.checkbox{
+    font-size: 12px;
+}
+.submit input{
+    background-color: #037365;
+    color: #fff;
+    cursor: pointer;
+}
+/*End Order*/
+
+/* Start Contact*/
+.contact{
+    padding: 35px 0;
+    font-size: 40px;
+    font-weight: bold;
+    color: #037365;
+    margin-top: 30px;
+    background: url(../images/map-image.png);
+
+}
+.contact h2{
+    text-align: right;
+    font-size: 40px;
+    font-weight: bold;
+    color: #037365;
+    margin-top: 15px;
+}
+.contact h2 span{
+    color: #fff;
+}
+.cont{
+    text-align: center;
+}
+.cont .submit{
+    padding: 0 455px;
+    margin: 0;
+}
+.cont .submit input{
+    color: #fff;
+    cursor: pointer;
+    background-color: #037365;
+    border: 1.5px solid #037365;
+    border-radius: 5px;
+    font-size: 18px;
+    text-align: center;
+    padding: 12px;
+    margin: 50px;
+}
+.cont-info{
+    float: right;
+    text-align: right;
+    margin-right: 180px;
+}
+.cont-info input{
+    border: 1.5px solid #037365;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 5px 10px;
+    margin: 0 0 40px;
+}
+.cont-info textarea{
+    border: 1.5px solid #037365;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 5px 10px;
+}
+
+/* End Contact*/
+
+/*Start Footer*/
+.footer{
+    background-color: #232323;
+    color: #fff;
+    padding: 40px 0;
+    overflow: hidden;
+    margin-top: 0;
+}
+.footer .col{
+    width: 25%;
+    float: right;
+}
+.footer .col h2{
+    color: #fff;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
+.footer .col p{
+    margin-bottom: 30px;
+    line-height: 1.6;
+    color: rgba(230, 213, 213, 0.596);
+}
+.footer .col i{
+    display: inline-block;
+    color: rgba(230, 213, 213, 0.596);
+    padding: 10px;
+    margin-right: 10px;
+    text-align: center;
+    border: 1px solid rgba(230, 213, 213, 0.596);
+    border-radius: 50%;
+    width: 40px !important;
+    cursor: pointer;
+}
+.footer .common-food span{
+    display: inline-block;
+    color: rgba(230, 213, 213, 0.596);
+    padding: 10px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    text-align: center;
+    border: 1px solid rgba(230, 213, 213, 0.596);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.footer .common-food span:hover{
+    color: #fff;
+    border: 1px solid #fff;
+}
+.footer .col i:hover{
+    color: #fff;
+}
+.fa-facebook:hover{
+    background-color: #385899;
+}
+.fa-twitter:hover{
+    background-color: #29a4da;
+}
+.fa-google-plus:hover{
+    background-color: #d64c40;
+}
+.footer .recent div{
+    overflow: hidden;
+    margin-bottom: 15px;
+    cursor: pointer;
+}
+.footer .recent div img{
+    float: right;
+    margin-left: 10px;
+    width: 40%;
+    height: 40%;
+}
+.footer .recent div h4{
+    margin: 6px 0;
+    color: #CCC;
+    font-weight: normal;
+}
+.footer .recent div span{
+    color: rgba(230, 213, 213, 0.596);
+}
+.footer .blog ul li{
+    padding: 15px;
+    border-bottom: 1px solid  rgba(230, 213, 213, 0.596);
+    color: #CCC;
+    cursor: pointer;
+}
+.footer .blog ul li:hover{
+    color: #fff;
+    border-bottom: 1px solid #fff;
+}
+.footer .copyright{
+    margin-top: 70px;
+    margin-bottom: 0;
+    text-align: center;
+    color: rgba(230, 212, 212, 0.596);
+}
+
+/*End Footer*/
+
+
+
+/*Start My Framework*/
+.clearfix{
+    clear: both;
+}
+.special-heading{
+    position: relative;
+}
+.special-heading::after{
+    content: "";
+    display: block;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 60px;
+    border-bottom: 3px solid #037365;
+}
+.separator{
+    border: 1px solid #000;
+    display: block;
+    margin-bottom: 0;
+}
+/*End My Framework*/
+
